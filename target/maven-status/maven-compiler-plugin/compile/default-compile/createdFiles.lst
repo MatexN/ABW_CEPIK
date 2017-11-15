@@ -1,0 +1,7 @@
+pl/wat/repository/VehicleDao.class
+pl/wat/repository/InspectionDao.class
+pl/wat/controller/MainPageController.class
+pl/wat/service/DiagnosticStationService.class
+pl/wat/service/InspectionService.class
+pl/wat/service/VehicleService.class
+pl/wat/repository/DiagnosticStationDao.class
