@@ -31,7 +31,6 @@ public class VehicleHistoryController {
 
         model.addAttribute("owners", vehicleService.getOwnersByVehicleId(vehicleid));
 
-
         return "history";
     }
 }
