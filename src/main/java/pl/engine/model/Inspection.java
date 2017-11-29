@@ -18,10 +18,10 @@ public class Inspection extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn(name = "vehicle_id", referencedColumnName = "id")
     private Vehicle vehicle;
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn(name = "diagnosticstation_id", referencedColumnName = "id")
     private DiagnosticStation diagnosticStation;
     private java.sql.Date date;
@@ -30,7 +30,7 @@ public class Inspection extends BaseEntity {
     @Override
     public String toString() {
         return diagnosticStation.toString() + "\n" + vehicle.toString() +
-        "\n" + date + "\n" + description;
+                "\n" + date + "\n" + description;
     }
 
 }
