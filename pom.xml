@@ -19,7 +19,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<<<<<<< HEAD
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -32,14 +32,12 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-el</artifactId>
         </dependency>
-=======
 
->>>>>>> origin/master
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-<<<<<<< HEAD
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -48,9 +46,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-=======
 
->>>>>>> origin/master
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -74,7 +70,7 @@
         </dependency>
 
         <dependency>
-<<<<<<< HEAD
+
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
             <version>2.2.1</version>
@@ -135,11 +131,11 @@
             <groupId>org.webjars</groupId>
             <artifactId>font-awesome</artifactId>
             <version>4.7.0</version>
-=======
+        </dependency>
+        <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>3.3.7</version>
->>>>>>> origin/master
         </dependency>
     </dependencies>
 
