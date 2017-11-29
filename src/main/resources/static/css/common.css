@@ -1,0 +1,41 @@
+.custom-header {
+    background-color: #3949ab;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+html, body {
+    background-color: #efefef;
+    height: auto;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+    position: static;
+}
+
+.custom-container {
+    margin-top: 56px;
+    margin-bottom: 5rem;
+}
+
+.content-panel {
+    background-color: white;
+    padding: 3rem 3rem;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    margin-bottom: 1.5rem;
+}
+
+.content-title {
+    font-size: x-large;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #1f09ca;
+}
+
+.inputdemoErrors .inputErrorsApp {
+    min-height: 48px; }
+
+.inputdemoErrors md-input-container > p {
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%; }

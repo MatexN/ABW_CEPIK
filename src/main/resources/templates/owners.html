@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css"/>
+
+</head>
+<body>
+<h1>Właściciele: </h1>
+<!--<span th:text="'test text: ' + ${field.firstname}"></span><br/>-->
+<li th:each="owner:  ${owners}">
+    <td th:text="'Imie: ' + ${owner.firstname}"></td><br/>
+    <td th:text="'Nazwisko: ' + ${owner.lastname}"></td><br/>
+    <td th:text="'PESEL: ' + ${owner.pesel}"></td><br/>
+    <td th:text="'Mail: ' + ${owner.mail}"></td><br/>
+    <br/>
+    <br/>
+</li>
+<a href="/">Strona Główna</a> <br/>
+</body>
+</html>
