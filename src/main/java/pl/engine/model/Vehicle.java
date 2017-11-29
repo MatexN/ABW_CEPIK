@@ -35,6 +35,8 @@ public class Vehicle extends BaseEntity {
     private String secret;
     @OneToMany(mappedBy = "vehicle")
     private List<VehicleOwner> owners = new ArrayList<>();
+    @OneToMany(mappedBy = "vehicle")
+    private List<Inspection> inspections = new ArrayList<>();
 
     @Override
     public String toString() {

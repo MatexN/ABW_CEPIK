@@ -29,6 +29,7 @@ public class VehicleHistoryController {
     @RequestMapping("/history")
     public String getHistory(Model model, @RequestParam Long vehicleid) {
 
+        model.addAttribute("vehicle", vehicleService.findOne(vehicleid));
         model.addAttribute("owners", vehicleService.getOwnersByVehicleId(vehicleid));
 
         return "history";

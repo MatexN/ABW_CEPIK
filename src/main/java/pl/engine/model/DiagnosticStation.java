@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import pl.engine.model.base.BaseEntity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +20,12 @@ public class DiagnosticStation extends BaseEntity {
     private Long id;
     private String street;
     private String local;
-//    @OneToMany(mappedBy = "diagnostic_station")
-//    private List<Inspection>
+    @OneToMany(mappedBy = "diagnosticStation")
+    private List<Inspection> inspections = new ArrayList<>();
+
+    @Override
+    public String toString(){
+        return street + " " + local;
+    }
 
 }
