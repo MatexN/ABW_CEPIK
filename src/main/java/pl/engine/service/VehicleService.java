@@ -2,6 +2,7 @@ package pl.engine.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.engine.model.Inspection;
 import pl.engine.model.Owner;
 import pl.engine.model.Vehicle;
 import pl.engine.repository.VehicleDao;
@@ -41,6 +42,9 @@ public class VehicleService {
 
     public List<Owner> getOwnersByVehicleId(Long id) {
         return vehicleDao.getOwnersByVehicleId(id);
+    }
+    public List<Inspection> getAllInspectionsByVehicleId(Long id) {
+        return vehicleDao.getInspectionsByVehicleId(id);
     }
 
 }

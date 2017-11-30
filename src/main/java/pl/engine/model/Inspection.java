@@ -29,7 +29,7 @@ public class Inspection extends BaseEntity {
 
     @Override
     public String toString() {
-        return diagnosticStation.toString() + "\n" + vehicle.toString() +
+        return diagnosticStation.toString() + "\n" + 
                 "\n" + date + "\n" + description;
     }
 

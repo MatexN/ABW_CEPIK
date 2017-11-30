@@ -17,8 +17,9 @@ public interface VehicleDao extends JpaRepository<Vehicle, Long> {
             "WHERE v.vehicle.id = ?1")
     List<Owner> getOwnersByVehicleId(Long id);
 
-    @Query( "SELECT i FROM Inspection i " +
-            "JOIN i.vehicle v " +
-            "WHERE v.id = ?1") //nie sprawdzalem jeszcze
-    List<Inspection> getAllInspections(Long id);
+    @Query( "SELECT i FROM Vehicle v " +
+            "JOIN v.inspections i " +
+            "WHERE v.id=?1")
+    List<Inspection> getInspectionsByVehicleId(Long id);
 }
+//SELECT s, q FROM QuestionSet s JOIN s.questions q
