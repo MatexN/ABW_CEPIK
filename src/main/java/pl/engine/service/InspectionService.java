@@ -2,8 +2,8 @@ package pl.engine.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.engine.entity.Inspection;
 import pl.engine.repository.InspectionDao;
-import pl.engine.model.Inspection;
 
 import javax.transaction.Transactional;
 import java.util.List;

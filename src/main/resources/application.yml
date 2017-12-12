@@ -1,0 +1,17 @@
+
+server:
+  port: 8080
+spring:
+  datasource:
+    url: @cepik.database.url@
+    username: @cepik.database.username@
+    password: @cepik.database.password@
+  thymeleaf:
+    cache: false
+    prefix:  @thymeleaf.template.folder@
+  resources:
+    static-locations:  @spring.resources.static.locations@
+    cache-period: 0
+  jpa:
+    hibernate:
+      ddl-auto: update

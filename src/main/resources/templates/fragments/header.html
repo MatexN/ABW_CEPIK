@@ -1,28 +1,46 @@
-<div th:fragment="header" th:remove="tag" xmlns:th="http://www.thymeleaf.org">
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse custom-header">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="header" th:remove="tag" xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <nav class="navbar navbar-toggleable-sm navbar-light bg-faded fixed-top custom-header">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
-        <a class="navbar-brand" href="#">ABW CEPIK</a>
+        <a class="navbar-brand" th:href="@{/}">ABW CEPIK</a>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <div sec:authorize="isAuthenticated()" class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" th:href="@{/osoba}">Dodaj osobę</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+
+                <!-- Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Więcej</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Dodaj samochod</a>
+                        <a class="dropdown-item" href="#">Wyszukiwarla</a>
                     </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
+                        <span sec:authentication="name"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-r dropdown-unique" aria-labelledby="navbarDropdownMenuLink1" style="position: absolute;">
+                        <a class="dropdown-item waves-effect waves-light" href="#">Ustawienia</a>
+                        <a class="dropdown-item waves-effect waves-light" th:href="@{/logout}" >Wyloguj się</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div sec:authorize="isAnonymous()" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/login}">Zaloguj się</a>
                 </li>
             </ul>
         </div>

@@ -1,4 +1,4 @@
 package pl.engine.repository.base;
 
-public class BaseDao {
+public interface BaseDao {
 }

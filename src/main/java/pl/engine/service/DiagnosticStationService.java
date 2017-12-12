@@ -2,8 +2,8 @@ package pl.engine.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.engine.entity.DiagnosticStation;
 import pl.engine.repository.DiagnosticStationDao;
-import pl.engine.model.DiagnosticStation;
 
 import javax.transaction.Transactional;
 import java.util.List;

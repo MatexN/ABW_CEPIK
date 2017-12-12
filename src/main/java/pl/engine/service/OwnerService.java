@@ -2,8 +2,8 @@ package pl.engine.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.engine.entity.Owner;
 import pl.engine.repository.OwnerDao;
-import pl.engine.model.Owner;
 
 import javax.transaction.Transactional;
 import java.util.List;

@@ -1,0 +1,40 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="logged" th:remove="tag">
+    <div class="col-12 content-title">
+        Zalogowano i uzyskano dostęp
+    </div>
+</div>
+
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="notLogged" th:remove="tag">
+    <div class="col-12 content-title">
+        Agencja Bezpieczeństwa Wewnętrznego
+        <div ng-app="tabsDemoDynamicHeight" ng-cloak>
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="dostęp">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Centralna Ewidencja Pojazdów i Kierowców</h1>
+                            <p class="smaller-display-text">
+                                Aby uzyskać dostęp do systemu CEPIK skontaktuj się z administratorem.
+                            </p>
+                            <p class="smaller-display-text">
+                                Jeśli masz już konto <a th:href="@{/login}">zaloguj się</a>.
+                            </p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="o cepik">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Centralna Ewidencja Pojazdów i Kierowców</h1>
+                            <p class="smaller-display-text">
+                                Centralna Ewidencja Pojazdów i Kierowców to system informatyczny obejmujący centralną bazę danych zawierającą dane i informacje o drogowych pojazdach mechanicznych, ich
+                                właścicielach i posiadaczach, a także osobach posiadających wymagane uprawnienia do kierowania pojazdami. Ewidencja ta prowadzona jest w systemie teleinformatycznym.
+                            </p>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+    </div>
+    <script>
+        angular.module('tabsDemoDynamicHeight', ['ngMaterial']);
+    </script>
+</div>

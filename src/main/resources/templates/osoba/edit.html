@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<body>
+<div th:fragment="fragment" layout:fragment="content">
+    <div class="row content-panel">
+        <div class="col-12 content-title">
+            <span th:if="${entity == null}">Dodaj nową osobę</span>
+            <span th:if="${entity != null}">Edytuj osobę</span>
+
+            <span>[[${jeden}]]</span>
+        </div>
+        <div class="col-12">
+            <div ng-controller="AppCtrl" layout="column" ng-cloak class="inputAngularErrors" ng-app="MyApp">
+                <md-content layout-padding="">
+                    <form name="projectForm" method="post" action="/osoba">
+
+                        <div layout="row" style="display: none">
+                            <md-input-container flex="50">
+                            <label>Id</label>
+                            <input name="id"  ng-model="project.entity.id">
+                        </md-input-container>
+                        </div>
+
+
+                        <div layout="row">
+                            <md-input-container flex="50">
+                                <label>Imie</label>
+                                <input required="" class="md-input" name="firstName" ng-model="project.entity.firstName">
+                                <div ng-messages="projectForm.firstName.$error">
+                                    <div ng-message="required">To pole jest wymagane.</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container flex="50">
+                                <label>Nazwisko</label>
+                                <input required="" name="lastName" ng-model="project.entity.lastName">
+                                <div ng-messages="projectForm.lastName.$error">
+                                    <div ng-message="required">To pole jest wymagane.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                        <div>
+                            <md-button class="md-raised md-primary md-button md-ink-ripple float-right" ng-disabled="projectForm.$invalid" type="submit">Zapisz</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        (function () {
+            angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+
+                .controller('AppCtrl', ["$scope", function ($scope) {
+                    $scope.project = {
+                        entity: /*[[${entity}]]*/ null
+                    };
+                }]);
+        })();
+
+        /*]]>*/
+    </script>
+</div>
+</body>
+</html>
+

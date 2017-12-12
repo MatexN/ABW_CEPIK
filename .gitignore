@@ -1,25 +1,12 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Java template
-# Compiled class file
-*.class
+# Based on: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 
-# Log file
-*.log
+# User-specific stuff:
+.idea/
 
-# BlueJ files
-*.ctxt
+## Project files:
+*.iml
+*.iws
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
+# IntelliJ out
+/out/
+**/target/

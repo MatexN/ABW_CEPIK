@@ -2,8 +2,7 @@ package pl.engine.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.engine.model.Owner;
-import pl.engine.model.VehicleOwner;
+import pl.engine.entity.VehicleOwner;
 import pl.engine.repository.VehicleOwnerDao;
 
 import javax.transaction.Transactional;
@@ -16,19 +15,20 @@ public class VehicleOwnerService {
     private VehicleOwnerDao vehicleOwnerDao;
 
     @Transactional
-    public void create(VehicleOwner station) {
-        vehicleOwnerDao.save(station);
+    public VehicleOwner create(VehicleOwner entity) {
+        return vehicleOwnerDao.save(entity);
     }
 
-//    @Transactional
-//    public VehicleOwner update(Long id, VehicleOwner entity) {
-//        entity.setId(id);
-//        return vehicleOwnerDao.save(entity);
-//    }
+    @Transactional
+    public VehicleOwner update(Long id, VehicleOwner entity) {
+        entity.setId(id);
+        return vehicleOwnerDao.save(entity);
+    }
 
+    @Transactional
     public void delete(Long id) {
         if (vehicleOwnerDao.exists(id)) vehicleOwnerDao.delete(id);
-        else System.out.println("there is no vehicle-owner with id=" + id);
+        else System.out.println("there is no osoba with id=" + id);
     }
 
     public VehicleOwner findOne(Long id) {
@@ -37,11 +37,5 @@ public class VehicleOwnerService {
 
     public List<VehicleOwner> findAll() {
         return vehicleOwnerDao.findAll();
-    }
-//    public List<Owner> getVehicleOwnersById(Long vehicleId) {
-//        return vehicleOwnerDao.getVehicleOwnersById(vehicleId);
-//    }
-    public void test() {
-
     }
 }

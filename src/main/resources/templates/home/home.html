@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:remove="tag"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{template}">
+<body>
+<div th:fragment="fragment" layout:fragment="content">
+    <link th:href="@{/css/home.css}" rel="stylesheet"/>
+    <div class="row content-panel">
+        <div sec:authorize="isAnonymous()" th:replace="home/content::notLogged"></div>
+        <div sec:authorize="isAuthenticated()" th:replace="home/content::logged"></div>
+    </div>
+</div>
+</body>
+</html>
+

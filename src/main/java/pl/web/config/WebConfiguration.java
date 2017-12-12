@@ -7,10 +7,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * Created by Marcin Niedzielski.
+ * Wojskowa Akademia Techniczna im. Jarosława Dąbrowskiego, Warszawa 2017r.
+ */
 @Configuration
 @EnableAutoConfiguration
-@EntityScan("pl.engine.model")
+@EntityScan("pl.engine.entity")
 @EnableJpaRepositories("pl.engine.repository")
-@ComponentScan({"pl.engine.service", "pl.web.view.controller"})
+@ComponentScan({"pl.engine.service","pl.web.view.controller"})
 public class WebConfiguration extends WebMvcConfigurerAdapter {
+
 }
