@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<body>
+<div th:fragment="fragment" layout:fragment="content">
+    <div class="row content-panel">
+        <div class="col-12">
+            <form id="vfields" action="#" th:action="@{/vehicle/add}" th:object="${vehicle}" method="post">
+                <div class="form-group">
+                    <label>Marka *</label><br/>
+                    <input type="text" th:field="*{brand}" th:required="required"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Model *</label><br/>
+                    <input type="text" th:field="*{model}" th:required="required"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></p>
+                </div>
+                <div class="form-group">
+                    <label>VIN *</label><br/>
+                    <input type="text" th:field="*{vin}" th:required="required"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('vin')}" th:errors="*{vin}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Numer Rejestracyjny *</label><br/>
+                    <input type="text" th:field="*{registrationnumber}" th:required="required"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('registrationnumber')}"
+                       th:errors="*{registrationnumber}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Numer Silnika</label><br/>
+                    <input type="text" th:field="*{enginenumber}"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('enginenumber')}" th:errors="*{enginenumber}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Kategoria *</label><br/>
+                    <input type="text" th:field="*{category}"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Waga</label><br/>
+                    <input type="number" th:field="*{weight}"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Moc</label><br/>
+                    <input type="number" th:field="*{power}"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('power')}" th:errors="*{power}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Pojemność</label><br/>
+                    <input type="number" th:field="*{capacity}"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('capacity')}" th:errors="*{capacity}"></p>
+                </div>
+                <div class="form-group"><br/>
+                    <label>Top Secret</label>
+                    <input type="checkbox" name="secret" value="true" th:field="*{secret}"/>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+                <br/><br/>
+                <p>* - wymagane</p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

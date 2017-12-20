@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "T_OSOBA")
 @NoArgsConstructor
 public class Osoba extends BaseEntity {
     @Id

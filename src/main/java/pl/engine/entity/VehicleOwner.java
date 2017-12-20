@@ -9,7 +9,6 @@ import pl.engine.entity.base.BaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_VEHICLE_OWNER")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor

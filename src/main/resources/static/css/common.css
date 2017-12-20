@@ -64,3 +64,8 @@ md-checkbox.md-checked .md-icon {
     font-size: 0.8em;
     text-align: left;
     width: 100%; }
+
+.inputError{
+    color: red;
+    font-size: 15px;
+}

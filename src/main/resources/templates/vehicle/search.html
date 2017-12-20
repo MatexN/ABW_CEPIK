@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<body>
+<div th:fragment="fragment" layout:fragment="content">
+    <div class="row content-panel">
+        <div class="col-12">
+            <form id="vfields" action="#" th:action="@{/vehicle/search}" th:object="${vehicle}" method="post">
+                <div class="form-group">
+                    <label>VIN</label><br/>
+                    <input type="text" th:field="*{vin}" th:required="required"/>
+                    <p class="inputError" th:if="${#fields.hasErrors('vin')}" th:errors="*{vin}"></p>
+                </div>
+                <button type="submit" class="btn btn-primary">Szukaj</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

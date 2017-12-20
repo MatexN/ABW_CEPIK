@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pl.engine.model.DiagnosticStation;
-import pl.engine.model.Owner;
+import pl.engine.entity.DiagnosticStation;
+import pl.engine.entity.Owner;
 import pl.engine.service.DiagnosticStationService;
 import pl.engine.service.OwnerService;
 
@@ -28,7 +28,7 @@ public class MainPageController {
 
     @RequestMapping("/")
     public String add() {
-        return "welcome";
+        return "index";
     }
     @RequestMapping("/template")
     public String hello() {

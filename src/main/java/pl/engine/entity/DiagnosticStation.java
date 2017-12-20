@@ -12,7 +12,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "T_DIAGNOSTIC_STATION")
 @NoArgsConstructor
 public class DiagnosticStation extends BaseEntity {
 

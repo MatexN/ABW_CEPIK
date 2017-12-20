@@ -11,6 +11,7 @@ import pl.engine.repository.VehicleDao;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,8 +21,8 @@ public class VehicleService {
     private VehicleDao vehicleDao;
 
     @Transactional
-    public void create(Vehicle station) {
-        vehicleDao.save(station);
+    public void create(Vehicle vehicle) {
+        vehicleDao.save(vehicle);
     }
 
     @Transactional
@@ -44,11 +45,22 @@ public class VehicleService {
     }
 
     public List<Owner> getOwnersByVehicleId(Long id) {
-        return vehicleDao.findOne(id).getOwners().stream().map(VehicleOwner::getOwner).collect(Collectors.toList());
+        return vehicleDao.findOne(id).getOwners()
+                .stream()
+                .map(VehicleOwner::getOwner)
+                .collect(Collectors.toList());
     }
 
     public List<Inspection> getAllInspectionsByVehicleId(Long id) {
         return vehicleDao.findOne(id).getInspections();
+    }
+
+    public Vehicle findOne(String vin) {
+        return vehicleDao.findAll()
+                .stream()
+                .filter(p -> p.getVin().equals(vin))
+                .findAny()
+                .orElse(null);
     }
 
 }

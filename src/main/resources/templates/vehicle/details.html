@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<body>
+<div th:fragment="fragment" layout:fragment="content">
+    <div class="row content-panel">
+        <div class="col-12">
+            <h1>Pojazd: </h1>
+            <label>Marka: </label>
+            <span th:text="${vehicle.brand} != null ? ${vehicle.brand} "></span><br/>
+            <label>Model: </label>
+            <span th:text="${vehicle.model} != null ? ${vehicle.model}"></span><br/>
+            <label>Vin: </label>
+            <span th:text="${vehicle.vin} != null ? ${vehicle.vin}"></span><br/>
+            <label>Numer Rejestracyjny: </label>
+            <span th:text="${vehicle.registrationnumber} != null ? ${vehicle.registrationnumber}"></span><br/>
+            <label>Numer Silnika: </label>
+            <span th:text="${vehicle.enginenumber} != null ? ${vehicle.enginenumber}"></span><br/>
+            <label>Kategoria: </label>
+            <span th:text="${vehicle.category != null} ? ${vehicle.category}"></span><br/>
+            <label>Waga: </label>
+            <span th:text="${vehicle.weight} != null ? ${vehicle.weight}"></span><br/>
+            <label>Moc: </label>
+            <span th:text="${vehicle.power} != null ? ${vehicle.power}"></span><br/>
+            <label>Pojemność: </label>
+            <span th:text="${vehicle.capacity} != null ? ${vehicle.capacity}"></span><br/>
+            <label>Top Secret: </label>
+            <span th:text="${vehicle.secret} != null ? ${vehicle.secret}"></span><br/>
+
+
+            <h1>Właściciele: </h1>
+            <li th:each="owner:  ${owners}">
+                <label>Imie: </label>
+                <td th:text="${owner.firstname} != null ? ${owner.firstname}"></td>
+                <br/>
+                <label>Nazwisko: </label>
+                <td th:text="${owner.lastname} != null ? ${owner.lastname}"></td>
+                <br/>
+                <label>Pesel: </label>
+                <td th:text="${owner.pesel} != null ? ${owner.pesel}"></td>
+                <br/>
+                <label>Mail: </label>
+                <td th:text="${owner.mail} != null ? ${owner.mail}"></td>
+                <br/>
+                <br/>
+                <br/>
+            </li>
+
+
+            <h1>Przeglądy: </h1>
+            <li th:each="inspection:  ${inspections}">
+                <label>Data: </label>
+                <td th:text="${inspection.date}  != null ? ${inspection.date}"></td>
+                <br/>
+                <label>Opis: </label>
+                <td th:text="${inspection.description}  != null ? ${inspection.date}"></td>
+                <br/>
+                <label>Adres: </label>
+                <td th:text="${inspection.diagnosticStation.street}  + ' ' +
+                ${inspection.diagnosticStation.local}"></td>
+                <br/>
+                <br/>
+                <br/>
+            </li>
+        </div>
+    </div>
+</div>
+
+<a href="/">Strona Główna</a> <br/>
+</body>
+</html>

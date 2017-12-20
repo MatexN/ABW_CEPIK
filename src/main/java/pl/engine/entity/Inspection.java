@@ -10,7 +10,6 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "T_INSPECTION")
 @NoArgsConstructor
 public class Inspection extends BaseEntity {
 
