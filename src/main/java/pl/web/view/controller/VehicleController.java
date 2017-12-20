@@ -36,7 +36,7 @@ public class VehicleController {
 
         vehicleService.create(vehicle);
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping(value = "/search")
